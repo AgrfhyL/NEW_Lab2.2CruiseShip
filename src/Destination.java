@@ -55,4 +55,14 @@ public class Destination {
         }
         return out;
     }
+
+    public boolean participantIsAtThisDestination(Passenger passenger) {
+        for (Activity e: activities) {
+            for (Passenger pass: e.getParticipants()) {
+                if (pass.equals(passenger))
+                    return true;
+            }
+        }
+        return false;
+    }
 }

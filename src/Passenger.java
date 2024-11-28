@@ -54,7 +54,7 @@ public class Passenger {
     }
 
     public boolean joinActivity(Activity activity) {
-        if (activity.isAvailable()) {
+        if (activity.isAvailable() && !activity.getLocation().participantIsAtThisDestination(this)) {
             activity.addParticipant(this);
             return true;
         }
